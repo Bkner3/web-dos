@@ -1,0 +1,32 @@
+.Start-Menu {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+    display: none;
+
+    width: 250px;
+    padding: 10px;
+
+    background-color: #c0c0c0;
+    border: 2px solid #808080;
+}
+
+.Start-Button {
+    cursor: pointer;
+}
+
+.App-Button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+
+    text-align: left;
+    border: 0;
+    background-color: transparent;
+}
+
+.App-Button:hover {
+    background-color: #808080;
+    color: white;
+}

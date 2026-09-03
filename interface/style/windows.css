@@ -1,15 +1,22 @@
 /*WINDOWS*/
 
-#Windows {
-  position: absolute;
-  z-index: 9;
-  background-color: #f1f1f1;
-  border: 1px solid #d3d3d3;
-  text-align: center;
-  display: none;
+.Windows {
+    position: absolute;
+    border: 1px solid #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+    display: none;
+    width: max-content;
+    height: max-content;
 }
 
-#Windows-header {
+.Windows-header {
+  position: relative;
   padding: 10px;
   cursor: move;
   z-index: 10;
@@ -17,18 +24,31 @@
   color: #ffffff;
 }
 
-#Close-Button {
+.Close-Button, .Minimize-Button, .Maximize-Button {
     color: #808080;
     background-color: #575757;
     border: 2px solid #808080;
+    float: right;
 }
-#Minimize-Button {
-    color: #808080;
-    background-color: #575757;
-    border: 2px solid #808080;
+
+.Close-Button:hover,
+.Minimize-Button:hover,
+.Maximize-Button:hover {
+    background-color: #808080;
+    color: white;
+    border: 1px solid #000000;
 }
-#Maximize-Button {
-    color: #808080;
-    background-color: #575757;
-    border: 2px solid #808080;
+
+.Close-Button:active,
+.Minimize-Button:active,
+.Maximize-Button:active {
+    background-color: #333333;
+    color: white;
 }
+
+.Close-Button:focus,
+.Minimize-Button:focus,
+.Maximize-Button:focus {
+    outline: 2px solid white;
+}
+

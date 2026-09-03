@@ -5,37 +5,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>WEB-DOS</title>
+    <title>Interface 85</title>
 
     <style>
-        @import url("./style.css");
-        @import url("./style/windows.css");        
+        @import url("./style/style.css");
+        @import url("./style/taskbar.css");
+        @import url("./style/windows.css");
+        @import url("./style/start-button.css");
+        @import url("./style/start-menu.css");
+        @import url("./style/desktop.css");
+
     </style>
 
     <script src="./scripts/taskbar.js" defer></script>
     <script src="./scripts/windows.js" defer></script>
+    <script src="./scripts/boot.js" defer></script>
+    <script src="./scripts/runtime.js" defer></script>
+    <script src="./scripts/start_menu.js" defer></script>
+
+    <!--Apps scripts-->
+    <script src="./scripts/apps/about-the-os.js" defer></script>
 </head>
 
 <body>
     <div class="Desktop">
-        <div id="Windows" class="Windows">
-            <div class="Windows-header" id="Windows-header">Welcome to interface 85</div>
-                Welcome mensage!!!
+        <!-- Desktop Content -->
+
+        <div id="Windows" class="Windows" style="justify-content: center; align-items: center;">
+            <div class="Windows-header" id="Windows-header">Interface 85</div>
+
+            <p>Welcome to interface 85, a web-based operating system that emulates the look and feel of classic desktop
+                environments.</p>
+
+            <p>This interface is designed to provide a nostalgic experience while allowing users to interact with
+                various applications and features in a simulated desktop environment.</p>
+
+            <p>Enjoy exploring the functionalities and have fun!</p>
+
+            <button class="Close-Button">CLOSE</button>
         </div>
+
+        <div id="Windows2" class="Windows" style="justify-content: center; align-items: center;">
+            <div class="Windows-header" id="Windows-header">
+                <!--Title of the Window-->TEST WINDOW
+            </div>
+
+            <!--Content-->THIS WINDOW IS FOR TEST PURPOSES ONLY!
+        </div>
+
+        <!-- End of the desktop-->
+    </div>
+
+    <div id="Taskbar-Start" class="Taskbar-Start">
+        aaaaa
     </div>
 
     <div class="Taskbar">
+        <!-- Taskbar Content -->
 
         <div class="StartButton">
-            <button class="Start-Button">
+            <button id="Start-Button" class="Start-Button">
                 <img src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell3240_32x32_4.png"
                     alt="Start">
             </button>
         </div>
 
+        <div id="Start-Menu" class="Start-Menu">
+            <button class="App-Button" data-app="explorer">Explorer</button>
+            <button class="App-Button" id="About-the-OS" data-app="About-the-OS">About the OS</button>
+            <button class="App-Button" data-app="settings">Settings</button>
+        </div>
+
         <button class="Clock" id="clock"></button>
 
-    </div>
     </div>
 </body>
 

@@ -1,0 +1,22 @@
+.StartButton {
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.Start-Button {
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    background-color: #bfbfbf;
+
+    cursor: pointer;
+}
+
+.Start-Button img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}

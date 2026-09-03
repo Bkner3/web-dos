@@ -1,0 +1,22 @@
+.Taskbar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 32px;
+
+    background-color: #bfbfbf;
+
+    display: none;
+    align-items: center;
+}
+.Clock {
+    margin-left: auto;
+    margin-right: 8px;
+
+    height: 24px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
