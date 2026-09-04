@@ -1,0 +1,34 @@
+.Desktop-Icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+
+    cursor: pointer;
+    text-align: center;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: white;
+    font-family: inherit;
+}
+
+.Desktop-Icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.Desktop-Icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin-bottom: 5px;
+    border: none;
+    padding: 0;
+    background: transparent;
+}

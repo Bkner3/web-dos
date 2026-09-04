@@ -11,7 +11,7 @@ function wait(ms) {
 async function Boot() {
 
     await wait(4000);
-
+    
     taskbar.style.display = "flex";
 
     await wait(1000);

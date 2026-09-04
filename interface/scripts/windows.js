@@ -1,12 +1,56 @@
-const headers = document.querySelectorAll(".Windows-header");
+function addWindowButtons(windowElement) {
 
-headers.forEach(header => {
+    const header = windowElement.querySelector(".Windows-header");
+
+    if (!header) return;
+
+    // Não adicionar os botões novamente
+    if (header.querySelector(".Close-Button")) return;
+
     header.innerHTML += `
-        <button id="Close-Button" class="Close-Button">×</button>
-        <button id="Maximize-Button" class="Maximize-Button">□</button>
-        <button id="Minimize-Button" class="Minimize-Button">−</button>
-
+        <button class="Close-Button">×</button>
+        <button class="Maximize-Button">□</button>
+        <button class="Minimize-Button">−</button>
     `;
+}
+
+
+// Adiciona os botões às janelas que já existem
+document.querySelectorAll(".Windows").forEach(windowElement => {
+    addWindowButtons(windowElement);
+});
+
+
+// Observa novas janelas criadas pelo JavaScript
+const desktop = document.querySelector(".Desktop");
+
+const observer = new MutationObserver(function (mutations) {
+
+    mutations.forEach(function (mutation) {
+
+        mutation.addedNodes.forEach(function (node) {
+
+            if (node.nodeType !== 1) return;
+
+            // Se o próprio elemento criado é uma janela
+            if (node.classList.contains("Windows")) {
+                addWindowButtons(node);
+            }
+
+            // Se dentro do elemento criado existir uma janela
+            node.querySelectorAll?.(".Windows").forEach(windowElement => {
+                addWindowButtons(windowElement);
+            });
+
+        });
+
+    });
+
+});
+
+observer.observe(desktop, {
+    childList: true,
+    subtree: true
 });
 
 
