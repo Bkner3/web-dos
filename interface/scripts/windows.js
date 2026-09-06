@@ -4,7 +4,6 @@ function addWindowButtons(windowElement) {
 
     if (!header) return;
 
-    // Não adicionar os botões novamente
     if (header.querySelector(".Close-Button")) return;
 
     header.innerHTML += `
@@ -15,13 +14,11 @@ function addWindowButtons(windowElement) {
 }
 
 
-// Adiciona os botões às janelas que já existem
 document.querySelectorAll(".Windows").forEach(windowElement => {
     addWindowButtons(windowElement);
 });
 
 
-// Observa novas janelas criadas pelo JavaScript
 const desktop = document.querySelector(".Desktop");
 
 const observer = new MutationObserver(function (mutations) {
@@ -32,12 +29,10 @@ const observer = new MutationObserver(function (mutations) {
 
             if (node.nodeType !== 1) return;
 
-            // Se o próprio elemento criado é uma janela
             if (node.classList.contains("Windows")) {
                 addWindowButtons(node);
             }
 
-            // Se dentro do elemento criado existir uma janela
             node.querySelectorAll?.(".Windows").forEach(windowElement => {
                 addWindowButtons(windowElement);
             });
@@ -69,7 +64,18 @@ document.addEventListener("mousedown", function(e) {
     const header = e.target.closest(".Windows-header");
 
     if (header) {
-        const windowElement = header.closest(".Windows");
+
+        if (!header.dataset.originalColor) {
+            header.dataset.originalColor = getComputedStyle(header).backgroundColor;
+        }
+
+        document.querySelectorAll(".Windows-header").forEach(otherHeader => {
+            if (otherHeader !== header && otherHeader.dataset.originalColor) {
+                otherHeader.style.backgroundColor = otherHeader.dataset.originalColor;
+            }
+        });
+
+        header.style.backgroundColor = "#000080";
 
         if (windowElement) {
             dragElement(windowElement);
@@ -94,7 +100,6 @@ document.addEventListener("click", function(e) {
 });
 
 
-// Make the DIV element draggable:
 async function dragElement(elmnt) {
 
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

@@ -24,11 +24,28 @@
 
     <!--Apps scripts-->
     <script src="./apps/about-the-os.js" defer></script>
+    <script src="./apps/calculator.js" defer></script>
   </head>
 
   <body>
     <div class="Desktop">
       <!-- Desktop Content -->
+      <button class="Desktop-Icon" id="explorer-my-computer">
+        <img
+          src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Explorer100_32x32_4.png"
+          alt="Icon"
+        />
+        My Computer
+
+      </button>
+      <button class="Desktop-Icon" id="explorer">
+        <img
+          src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Shell324_32x32_4.png"
+          alt="Icon"
+        />
+        Explorer
+      </button>
+
       <button
         class="Desktop-Icon"
         onclick="window.open('https://github.com/Bkner3/web-dos', '_blank')"
@@ -40,6 +57,26 @@
         Open Project Github
       </button>
 
+      <button
+        class="Desktop-Icon"
+        id="Calculator-Icon"
+      >
+        <img
+          src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/Calculator_32x32_4.png"
+          alt="Icon"
+        />
+        Calculator
+      </button>
+
+      <button
+        class="Desktop-Icon"
+        id="Recycle-Bin-Icon">
+        <img
+          src="https://cdn.jsdelivr.net/gh/React95/React95@master/packages/icons/png/RecycleEmpty_32x32_4.png"
+          alt="Icon"
+        />
+        Recycle Bin
+      </button>
       <div
         id="Windows"
         class="Windows"
@@ -82,7 +119,7 @@
 
       <div id="Start-Menu" class="Start-Menu">
         <button class="App-Button" data-app="explorer">Explorer</button>
-        <button class="App-Button" data-app="calculator">Calculator</button>
+        <button class="App-Button" id="Calculator" data-app="calculator">Calculator</button>
         <button class="App-Button" id="About-the-OS" data-app="About-the-OS">
           About the OS
         </button>

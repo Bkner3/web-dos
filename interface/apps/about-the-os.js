@@ -14,7 +14,7 @@ aboutButton.addEventListener("click", function () {
         </div>
 
         <p>Version: 1.0.0</p>
-        <p>Author: <a href="https://github.com/Bkner3/" target="_blank">Bernardo</a></p>
+        <p>Author: <a href="https://bkner3.github.io/portfolio/" target="_blank">Bernardo</a></p>
         <button onclick="window.open('https://github.com/Bkner3/', '_blank')">Open GitHub</button>
         <button class="Close-Button">Close</button>
     `;
